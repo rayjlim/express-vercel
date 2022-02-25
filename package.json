@@ -1,10 +1,10 @@
 {
   "name": "express-vercel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deploy express js to vercel.",
   "main": "index.js",
   "engines": {
-    "node" : "14.x"
+    "node": "14.x"
   },
   "scripts": {
     "start": "node index.js"
