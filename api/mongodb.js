@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 require('dotenv').config()
 
-// mongodb+srv://rayjlim1:<password>@cluster0.5lnch.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = `mongodb+srv://${process.env.mongo_user}:${process.env.mongo_pass}@${process.env.mongo_host}/`;
 
