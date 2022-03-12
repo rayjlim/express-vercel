@@ -34,11 +34,13 @@ router.get("/", async (req, res) => {
             //handle error
             console.log(err);
             conn.end();
+            return res.json(err)
           });
       })
       .catch((err) => {
         //not connected
         console.log(err);
+        return res.json(err)
       });
   } catch (error) {
     console.error(error);
