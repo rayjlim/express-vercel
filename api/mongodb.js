@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 require("dotenv").config();
 
-// mongodb+srv://<user>:<password>@<host>/myFirstDatabase?retryWrites=true&w=majority
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri = `mongodb+srv://${process.env.mongo_user}:${process.env.mongo_pass}@${process.env.mongo_host}/`;
 
@@ -21,7 +20,7 @@ router.get("/", async (req, res) => {
     });
     // console.log(client)
     client.connect((err) => {
-      const collection = client.db("test").collection("devices");
+      const collection = client.db(process.env.mongo_db).collection("devices");
       // console.log(collection)
 
       collection.find({}).toArray((err, result) => {
