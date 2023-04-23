@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const pkg = require("../package.json")
-const quotes = require("./quotes.json")
+const pkg = require("../package.json");
+const quotes = require("./quotes.json");
 
 /**
  * GET product list.
@@ -11,11 +11,10 @@ const quotes = require("./quotes.json")
 router.get("/", async (req, res) => {
   try {
     const items = quotes.quotes;
-    const item = items[Math.floor(Math.random()*items.length)];
-
-
+    const item = items[Math.floor(Math.random() * items.length)];
+    const date = new Date();
     res.json({
-      header: pkg.version + ":"+ new Date(),
+      metadata: `${pkg.version} : ${date}`,
       message: item.quote,
       author: item.author
     });
